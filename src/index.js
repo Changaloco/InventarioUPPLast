@@ -5,16 +5,17 @@ const path = require('path');
 
 const app = express();
 
-require('./db');
+const {db} = require('./db');
 
 
 //settings 
 app.set('port',process.env.PORT || 3000);
 //Middlewares
 app.use(bodyParser.json());
+app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true}));
 //Routes
-
+app.use('/api/tasks',require('./routes/task.routes'));
 //Static FIles
 app.use(express.static(path.join(__dirname,'public')));
 //Starting Server
