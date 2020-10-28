@@ -8,9 +8,6 @@ const app = express();
 require('./db');
 
 
-
-
-
 //settings 
 app.set('port',process.env.PORT || 3000);
 //Middlewares
