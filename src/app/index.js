@@ -3,11 +3,9 @@ import  {render} from 'react-dom';
 
 class App extends Component {
     render() {
-        return {
-
-        <h1>Kawamas</h1>
-        
-    }
+        return (
+            <h1>Kawamas</h1>
+        )
     }
 }
 
