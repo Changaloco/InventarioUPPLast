@@ -2,17 +2,18 @@ import React, {Component} from 'react';
 
 
 
-class navbar extends Component{
-
+class NavBar extends Component{
 render(){
 
-}return(
+return(
+    <div>
+        <p>Kawasakis</p>
 
-
-
-    
+    </div>
 )
 
 }
 
-export default navbar;
+}
+
+export default NavBar;
