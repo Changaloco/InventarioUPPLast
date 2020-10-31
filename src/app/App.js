@@ -22,7 +22,13 @@ class App extends Component {
                 'Content-Type':'application/json'
             }
         })
-            .then(res => console.log(res))
+            .then(res =>  res.json())
+            .then(data => {
+                console.log(data)
+                M.toast({html:'Usuario Registrado '});
+                this.setState({username:' ',email:' ',password:' '});
+
+            })
             .catch(err => console.error(err));
         e.preventDefault();
     }
@@ -53,9 +59,9 @@ class App extends Component {
                                     <form onSubmit={this.addUser}>
                                         <div className="row">
                                             <div className="input-field col s 12">
-                                                <input name="username" onChange={this.handleChange} type="text" placeholder="username" /> 
-                                                <input  name="email" onChange={this.handleChange} type="text" placeholder="email" />
-                                                <input  name="password" onChange={this.handleChange} type="text" placeholder="password" />
+                                                <input name="username" onChange={this.handleChange} type="text" placeholder="username" value = {this.state.username} /> 
+                                                <input  name="email" onChange={this.handleChange} type="text" placeholder="email" value = {this.state.email} />
+                                                <input  name="password" onChange={this.handleChange} type="text" placeholder="password" value = {this.state.password} />
 
 
                                             </div>
