@@ -14,9 +14,6 @@ module.exports = (sequelize, type)=>{
         TipoUsuario: type.STRING,
         AreaUsuario: type.STRING
 
-        /*matricula: type.STRING,
-        username: type.STRING,
-        email: type.STRING,
-        password: type.STRING(150)*/
+        
     })   
 }

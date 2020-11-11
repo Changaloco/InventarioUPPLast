@@ -17,7 +17,7 @@ userCtrl.createUser = async (req,res) =>{
     if (!errors.isEmpty()){
         return res.status(422).json({ errores: errors.array()});
     }
-    req.body.password =  bcrypt.hashSync(req.body.password,10);
+    req.body.UsuarioContraseña =  bcrypt.hashSync(req.body.UsuarioContraseña,10);
     const user = await User.create(req.body);
     res.json(user);
 };
