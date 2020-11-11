@@ -12,22 +12,29 @@ userCtrl.getUser = async (req, res)=>{
 };
 
 userCtrl.createUser = async (req,res) =>{
-    const{username,email,password} = req.body;
-
+    const{UsuarioNombre,UsuarioApellidoP,UsuarioApellidoM,NombreUsuario,UsuarioCorreo,UsuarioContraseña,TipoUsuario,AreaUsuario} = req.body;
     const errors  = validationResult(req);
     if (!errors.isEmpty()){
         return res.status(422).json({ errores: errors.array()});
     }
     req.body.password =  bcrypt.hashSync(req.body.password,10);
-    
-    
-    
     const user = await User.create(req.body);
-
     res.json(user);
-
-
 };
+
+userCtrl.updateUser = async (req, res)=>{
+    await user.update(req.body,{
+        where: {id: req.params.userId}
+    });
+    res.json({success: 'Actualizado con éxito.'});
+};
+
+userCtrl.deleteUser = async (req,res) =>{
+    await User.destroy({
+        where: {id: req.params.userId}
+    });
+    res.json({success: 'Eliminado con éxito.'});
+}
 
 userCtrl.loginUser = async (req, res)=>{
     const user = await User.findOne({where : {email: req.body.email}});
@@ -43,8 +50,8 @@ if (user){
 }else{
     res.json({error: 'Usuario o contrasena invalido'});
 }
-
 };
+
 
 const createToken = (user)=>{
     const payload = {
