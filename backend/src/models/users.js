@@ -5,9 +5,18 @@ module.exports = (sequelize, type)=>{
             primaryKey:true,
             autoIncrement:true
         },
-        matricula: type.STRING,
+        UsuarioNombre: type.STRING,
+        UsuarioApellidoP: typeSTRING,
+        UsuarioApellidoM: typeSTRING,
+        NombreUsuario: typeSTRING,
+        UsuarioCorreo: typeSTRING,
+        UsuarioContraseña: typeSTRING,
+        TipoUsuario: typeSTRING,
+        AreaUsuario: typeSTRING
+
+        /*matricula: type.STRING,
         username: type.STRING,
         email: type.STRING,
-        password: type.STRING(150)
+        password: type.STRING(150)*/
     })   
 }
