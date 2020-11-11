@@ -6,13 +6,13 @@ module.exports = (sequelize, type)=>{
             autoIncrement:true
         },
         UsuarioNombre: type.STRING,
-        UsuarioApellidoP: typeSTRING,
-        UsuarioApellidoM: typeSTRING,
-        NombreUsuario: typeSTRING,
-        UsuarioCorreo: typeSTRING,
-        UsuarioContraseña: typeSTRING,
-        TipoUsuario: typeSTRING,
-        AreaUsuario: typeSTRING
+        UsuarioApellidoP: type.STRING,
+        UsuarioApellidoM: type.STRING,
+        NombreUsuario: type.STRING,
+        UsuarioCorreo: type.STRING,
+        UsuarioContraseña: type.STRING,
+        TipoUsuario: type.STRING,
+        AreaUsuario: type.STRING
 
         /*matricula: type.STRING,
         username: type.STRING,
